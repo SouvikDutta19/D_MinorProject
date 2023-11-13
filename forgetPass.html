@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Forget Password</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=Mulish:wght@300&family=Playfair+Display&display=swap');
+
+    * {
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+    }
+
+    body {
+        background-image: url(/images/Kobe-Jones-Art-of-Japanese-Food-Decoration.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: 'Bricolage Grotesque', sans-serif;
+        font-family: 'Mulish', sans-serif;
+        font-family: 'Playfair Display', serif;
+        font-size: 30px;
+
+    }
+
+    .container {
+        width: 30rem;
+        height: 35rem;
+        background-color: transparent;
+        border-radius: 36px;
+        justify-content: center;
+        margin: auto;
+        margin-top: 8%;
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;    }
+
+    .password-input {
+        width: 22rem;
+        height: 3rem;
+        font-size: 23px;
+        border-radius: 19px;
+        border: none;
+        padding-left: 10px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        justify-content: center;
+        display: flex;
+        margin: auto;
+    }
+
+    .row {
+        padding: 30px;
+        padding-top: 0px;
+
+    }
+
+    .pass_show {
+        position: relative
+    }
+
+    .pass_show .ptxt {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        z-index: 1;
+        color: #f36c01;
+        margin-top: -10px;
+        cursor: pointer;
+        transition: .3s ease all;
+
+    }
+
+    .pass_show .ptxt:hover {
+        color: #333333;
+    }
+
+    .button-48 {
+        appearance: none;
+        background-color: #FFFFFF;
+        border-width: 0;
+        box-sizing: border-box;
+        color: #000000;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Clarkson, Helvetica, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 1em;
+        margin: 0;
+        opacity: 1;
+        outline: 0;
+        padding: 1.5em 2.2em;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        text-rendering: geometricprecision;
+        text-transform: uppercase;
+        transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1), background-color 100ms cubic-bezier(.694, 0, 0.335, 1), color 100ms cubic-bezier(.694, 0, 0.335, 1);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: baseline;
+        white-space: nowrap;
+        position: relative;
+        left: 6rem;
+        border-radius: 10px;
+    }
+
+    .button-48:before {
+        animation: opacityFallbackOut .5s step-end forwards;
+        backface-visibility: hidden;
+        background-color: #EBEBEB;
+        clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: translateZ(0);
+        transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+        width: 100%;
+    }
+
+    .button-48:hover:before {
+        animation: opacityFallbackIn 0s step-start forwards;
+        clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+    }
+
+    .button-48:after {
+        background-color: #FFFFFF;
+    }
+
+    .button-48 span {
+        z-index: 1;
+        position: relative;
+    }
+
+    .lblText {
+        color: white;
+        margin-left: 10px;
+        position: relative;
+        bottom: 10px;
+        left: 68px;
+    }
+</style>
+
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <form action=""></form>
+                <label class="lblText">Current Password</label>
+                <div class="form-group pass_show">
+                    <input type="password" id="oldPassword" value="" class="form-control password-input"
+                        placeholder="Enter Your Current Password">
+                </div>
+                <label style="left: 95px;" class="lblText">New Password</label>
+                <div class="form-group pass_show">
+                    <input type="password" id="newPassword" value="" class="form-control password-input"
+                        placeholder="Enter Your New Password">
+                </div>
+                <label class="lblText">Confirm Password</label>
+                <div class="form-group pass_show">
+                    <input type="password" id="confirmPassword" value="" class="form-control password-input"
+                        placeholder="Enter Your Confirm Password">
+                    <a style="font-size: 20px; color: white; padding-left: 30px; position: relative; left: 2.6rem; top: 8rem;" href="">Didn't Change Your
+                        Password?</a>
+                </div>
+                <button class="button-48 submit-button" role="button"><span class="text"
+                        onclick="changePassword()">Change Password</span></button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+
+        $(document).ready(function () {
+            $('.pass_show').append('<span class="ptxt">Show</span>');
+        });
+
+
+        $(document).on('click', '.pass_show .ptxt', function () {
+
+            $(this).text($(this).text() == "Show" ? "Hide" : "Show");
+
+            $(this).prev().attr('type', function (index, attr) { return attr == 'password' ? 'text' : 'password'; });
+
+        });
+        function changePassword() {
+            var newPassword = document.getElementById('newPassword').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (newPassword !== confirmPassword) {
+                alert("New and Confirm passwords do not match.");
+                return;
+            }
+            alert("Your password changed successfully.");
+            window.location.href = 'userProfile.html';
+        }
+    </script>
+</body>
+
+</html>

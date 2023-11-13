@@ -16,21 +16,18 @@
 
   <!--Link CSS-->
   <link rel="stylesheet" href="/CSS/fstyle.css">
-  <link rel="stylesheet" href="Food Delivery site (Project-1)/CSS/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 
   <!--Favicon-->
   <link rel="icon" type="image/x-icon" href="images\logosquare.jpeg">
+  <script defer src="script.js"></script>
 
   <title>Online Foods</title>
 
 </head>
 
 <body>
-  
-       <!-- ============================================ -->
-       <!-- -------- Developed By : Shaikh Minhaj ------ -->
-       <!-- ============================================ --> 
-  
+
   <!---------------------------------------------Header------------------------------------------------->
   <div class="container">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3  ">
@@ -40,10 +37,10 @@
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="#home" class="nav-link px-2 link-secondary">Home</a></li>
-        <li><a href="#offerd" class="nav-link px-2 link-dark">Offer & Deals</a></li>
         <li><a href="#custom-cards" class="nav-link px-2 link-dark">Categories</a></li>
         <li><a href="#order" class="nav-link px-2 link-dark">Order</a></li>
         <li><a href="#faq" class="nav-link px-2 link-dark">FAQs</a></li>
+        <li><a href="contactUs.html" class="nav-link px-2 link-dark">Contact Us</a></li>
         <li><a href="#about" class="nav-link px-2 link-dark">About</a></li>
       </ul>
 
@@ -60,7 +57,7 @@
         <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
           <li><a class="dropdown-item" href="#">New project...</a></li>
           <li><a class="dropdown-item" href="#">Settings</a></li>
-          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="userProfile.html">Profile</a></li>
           <li>
             <hr class="dropdown-divider">
           </li>
@@ -69,18 +66,12 @@
       </div>
 
       <div class="col-md-4 text-end">
+        <a href="Admin-login.html"> <button type="button" class="btn btn-outline-primary me-2">Admin Login</button></a>
         <a href="Log-in.html"> <button type="button" class="btn btn-outline-primary me-2">Login</button></a>
         <a href="sign-up.html"> <button type="button" class="btn btn-outline-success me-4">Sign-up</button></a>
-        <a href="checkoutpg.html"><button type="button" class="btn btn-danger">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3"
-              viewBox="0 0 16 16">
-              <path
-                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
-              </path>
-            </svg>
-            Cart
-          </button>
-        </a>
+        <span
+          style="padding-bottom: 5px; font-size: 20px; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; ">Hi,
+          Dipjyoti</span>
       </div>
     </header>
   </div>
@@ -127,7 +118,6 @@
     </div>
   </div>
 
-  <!---------------------------------------Offers and deals----------------------------->
   <div class="container-lg my-3" id="offerd" data-aos="flip-down">
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
       <!-- Carousel indicators -->
@@ -166,7 +156,7 @@
 
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
       <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-4 shadow-lg"
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-4 shadow-lg" id="addCart"
           style="background-image: url(images/fc1.jpeg );">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
             <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">South Indian Dishes</h2>
@@ -181,7 +171,7 @@
       </div>
 
       <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-4 shadow-lg"
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-4 shadow-lg" id="addCart2"
           style="background-image: url(images/fc3.jpeg );">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
             <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Chiken </h2>
@@ -196,7 +186,7 @@
       </div>
 
       <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-4 shadow-lg"
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-4 shadow-lg" id="addCart3"
           style="background-image: url(images/fc4.jpeg);">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
             <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"> Fruits</h2>
@@ -567,21 +557,63 @@
           data-aos="fade-out-down" data-aos-delay="200">
           <h2 class="mb-0 mt-lg-0 mt-4 text-gradient text-danger">Read more about us</h2>
           <h2 class="mb-4">And find some great partners</h2>
-          <p class="lead">It really matters and then like it really doesn’t matter. What matters is the people who are
-            sparked by it. And the people who are like offended by it, it doesn’t matter. </p>
+          <p class="lead">Launched in 2010, Our technology platform connects customers, restaurant partners and delivery partners, serving their multiple needs. Customers use our platform to search and discover restaurants, read and write customer generated reviews and view and upload photos, order food delivery, book a table and make payments while dining-out at restaurants. On the other hand, we provide restaurant partners with industry-specific marketing tools which enable them to engage and acquire customers to grow their business while also providing a reliable and efficient last mile delivery service. We also operate a one-stop procurement solution, Hyperpure, which supplies high quality ingredients and kitchen products to restaurant partners. We also provide our delivery partners with transparent and flexible earning opportunities.
+
+          </p>
           <ul class="m-lg-2 m-auto" data-aos="fade-in-down" data-aos-delay="300">
             <li class="lead mb-2">People are so scared to lose their hope</li>
             <li class="lead mb-2">That’s the main thing people </li>
             <li class="lead mb-2">Thoughts- their perception of themselves!</li>
           </ul>
-          <p class="blockquote my-3 ps-2" data-aos="fade-in-down" data-aos-delay="300">
-            <span class="text-bold">“Lorem itur at isibusdam, ratione minus doloremque!.”</span>
-            <br>
-            <small class="blockquote-footer" data-aos="fade-in-bottom" data-aos-delay="100">
-              Shaikh Minhaj
-            </small>
-          </p>
         </div>
+      </div>
+      <section style="margin: 30px; display: flex; justify-content: center; margin: auto; margin: 30px;">
+        <h1>
+          <span style="color: rgb(255, 183, 0);">MEET</span> OUR <span style="color: rgb(9, 228, 9);">LEADERSHIPS</span> 
+        </h1>
+      </section>
+      <div class="aboutCls person1"><img src="/images/WhatsApp Image 2023-11-11 at 7.26.16 PM.jpeg" alt="Dip img"
+          class="aboutImg">
+        <div class="p1Details" style="margin-left: 50px;">
+          <h2>FOUNDER</h2>
+          <h4>Dipjyoti Dutta</h4>
+          <h5>9883828238</h5>
+          <h5>ddipjyoti667@gmail.com</h5>
+          <h5> 22601221244</h5>
+        </div>
+      </div>
+      <div class="aboutCls person2" style="margin-top: 50px;">
+        <div class="p2Details" style="position: relative; left: 49rem; text-align: end;">
+          <h2>CEO</h2>
+          <h4>Ankan Chakraborty</h4>
+          <h5>6291113992</h5>
+          <h5>ankan@gmail.com</h5>
+          <h5>22601221201</h5>
+
+        </div>
+        <img src="/images/WhatsApp Image 2023-11-12 at 9.10.43 AM.jpeg" alt="" class="aboutImg">
+      </div>
+      <div class="aboutCls person3"><img src="/images/WhatsApp Image 2023-11-12 at 9.10.44 AM.jpeg" alt=""
+          class="aboutImg">
+        <div class="p3Details" style="margin-left: 45px; margin-top: 50px;">
+
+          <h2>SENIOR SOFTWARE ENGINEER</h2>
+          <h4>Lakshmishree Chatterjee</h4>
+          <h5>7439140670</h5>
+          <h5>shree@gmail.com</h5>
+          <h5>22601221171</h5>
+        </div>
+      </div>
+      <div class="aboutCls person4" style="margin-top: 50px;">
+        <div class="p4Details" style="position: relative; left: 43rem; text-align: end;">
+
+          <h2>MANAGER</h2>
+          <h4>Angshuman Bhattacharjee</h4>
+          <h5>7908242891</h5>
+          <h5>angshuman@gmail.com</h5>
+          <h5>22601221005</h5>
+        </div>
+        <img src="/images/WhatsApp Image 2023-11-12 at 9.10.44 AM (1).jpeg" alt="" class="aboutImg">
       </div>
     </div>
   </section>
@@ -716,9 +748,17 @@
     </div>
   </section>
 
+  <button class="button-82-pushable" role="button" onclick="logOutFn()">
+    <span class="button-82-shadow"></span>
+    <span class="button-82-edge"></span>
+    <span class="button-82-front text">
+      Log Out
+    </span>
+  </button>
+
   <!--------------------------------Footer------------------------------------------>
 
- 
+
 
   <!--Js-CDN-->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
@@ -732,6 +772,10 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
+    function logOutFn() {
+      alert("You're sucessfully logged out!");
+      window.location.href = 'Log-in.html';
+    }
   </script>
 </body>
 
