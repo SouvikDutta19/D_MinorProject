@@ -28,7 +28,7 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-    
+
     .shopping-cart {
         width: 750px;
         height: 423px;
@@ -113,14 +113,14 @@
 
     /* Product Image */
     .image {
-        margin-right: 50px;
+        margin-right: 30px;
     }
 
-    /* Product Description */
     .description {
         padding-top: 10px;
-        margin-right: 60px;
         width: 115px;
+        position: relative;
+        right: 6rem;
     }
 
     .description span {
@@ -143,7 +143,7 @@
     /* Product Quantity */
     .quantity {
         padding-top: 20px;
-        margin-right: 60px;
+        /* margin-right: 60px; */
     }
 
     .quantity input {
@@ -223,8 +223,8 @@
         width: 123px;
         height: 87px;
         border-radius: 10px;
-        position: absolute;
-        left: 22.5rem;
+        position: relative;
+        left: -6.5rem;
     }
 
     .buyNowBtn {
@@ -283,7 +283,7 @@
             </div>
 
             <div class="image">
-                <img class="product-img" src="Dosa-1.jpg.webp" alt="" />
+                <img class="product-img" src="/images/Dosa-1.jpg.webp" alt="" />
             </div>
 
             <div class="description">
@@ -374,9 +374,9 @@
         <span class="button-82-shadow"></span>
         <span class="button-82-edge"></span>
         <span class="button-82-front text">
-          Log Out
+            Log Out
         </span>
-      </button>
+    </button>
     <script type="text/javascript">
         $('.minus-btn').on('click', function (e) {
             e.preventDefault();
@@ -419,12 +419,12 @@
                 window.location.href = 'customerAddress.html';
             });
         });
-        function logOutFn(){
-      alert("You're sucessfully logged out!");
-      window.location.href = 'Log-in.html';
-    }
+        function logOutFn() {
+            alert("You're sucessfully logged out!");
+            window.location.href = 'Log-in.html';
+        }
     </script>
-    
+
 </body>
 
 </html>
