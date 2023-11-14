@@ -293,16 +293,16 @@
             </div>
 
             <div class="quantity">
-                <button class="plus-btn" type="button" name="button">
+                <button class="plus-btn" type="button" name="button" onclick="increasePrice(1)">
                     <img src="/images/plus.jpg" alt="" />
                 </button>
                 <input type="text" name="name" value="1">
-                <button class="minus-btn" type="button" name="button">
+                <button class="minus-btn" type="button" name="button" onclick="decreasePrice(1)">
                     <img src="/images/minus.jpg" alt="" />
                 </button>
             </div>
 
-            <div class="total-price">₹349</div>
+            <div class="total-price" id="product1Price">349.00</div>
             <input class="buyNowBtn" type="button" value="Buy Now">
         </div>
 
@@ -324,16 +324,16 @@
             </div>
 
             <div class="quantity">
-                <button class="plus-btn" type="button" name="button">
+                <button class="plus-btn" type="button" name="button" onclick="increasePrice(2)">
                     <img src="/images/plus.jpg" alt="" />
                 </button>
                 <input type="text" name="name" value="1">
-                <button class="minus-btn" type="button" name="button">
+                <button class="minus-btn" type="button" name="button" onclick="decreasePrice(2)">
                     <img src="/images/minus.jpg" alt="" />
                 </button>
             </div>
 
-            <div class="total-price">₹370</div>
+            <div class="total-price" id="product2Price">370.00</div>
             <input class="buyNowBtn" type="button" value="Buy Now">
 
         </div>
@@ -356,16 +356,16 @@
             </div>
 
             <div class="quantity">
-                <button class="plus-btn" type="button" name="button">
+                <button class="plus-btn" type="button" name="button" onclick="increasePrice(3)">
                     <img src="/images/plus.jpg" alt="" />
                 </button>
                 <input type="text" name="name" value="1">
-                <button class="minus-btn" type="button" name="button">
+                <button class="minus-btn" type="button" name="button" onclick="decreasePrice(3)">
                     <img src="/images/minus.jpg" alt="" />
                 </button>
             </div>
 
-            <div class="total-price">₹249</div>
+            <div class="total-price" id="product3Price">249.00</div>
             <input class="buyNowBtn" type="button" value="Buy Now">
 
         </div>
@@ -422,6 +422,54 @@
         function logOutFn() {
             alert("You're sucessfully logged out!");
             window.location.href = 'Log-in.html';
+        }
+
+        function increasePrice(productNumber) {
+            let priceElement = document.getElementById(`product${productNumber}Price`);
+            let currentPrice = parseFloat(priceElement.innerText);
+            let increment = getProductIncrement(productNumber);
+            priceElement.innerText = (currentPrice + increment).toFixed(2);
+        }
+
+        function decreasePrice(productNumber) {
+            let priceElement = document.getElementById(`product${productNumber}Price`);
+            let currentPrice = parseFloat(priceElement.innerText);
+            let increment = getProductIncrement(productNumber);
+
+            priceElement.innerText = Math.max(0, (currentPrice - increment)).toFixed(2);
+
+            if (currentPrice - increment <= 0) {
+                resetInitialPrice(productNumber);
+            }
+        }
+
+        function resetInitialPrice(productNumber) {
+            switch (productNumber) {
+                case 1:
+                    document.getElementById('product1Price').innerText = '0.00';
+                    break;
+                case 2:
+                    document.getElementById('product2Price').innerText = '0.00';
+                    break;
+                case 3:
+                    document.getElementById('product3Price').innerText = '0.00';
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function getProductIncrement(productNumber) {
+            switch (productNumber) {
+                case 1:
+                    return 349;
+                case 2:
+                    return 370;
+                case 3:
+                    return 249;
+                default:
+                    return 0;
+            }
         }
     </script>
 
